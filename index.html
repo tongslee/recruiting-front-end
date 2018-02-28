@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ShootProof</title>
+        <style>
+            body {
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+            .item{
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+            .container{
+                display: flex;
+                background-color: #EEE;
+                border-radius: 5px;
+                border: #CCC 1px solid;
+                height: 60px;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 10px;
+
+            }
+            .item img.element{
+                width: 50px;
+                border-radius: 5px;
+            }
+            .item .element{
+                margin: 5px;
+            }
+            .child{
+                width: 100%;
+                padding-left: 60px;
+            }
+            i {
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+            }
+
+            .right {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+            .down {
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+            .child-indicator{
+
+            }
+            .hide {
+                display: none;
+            }
+            .pointer{
+                cursor: pointer;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+    </body>
+    <script type="text/template" id="itemTemplate">
+        <div class="item" id="{{id}}" onclick="childToggle(event, {{id}})">
+            <div class="container">
+                <img class="element" src="{{href}}" alt="{{description}}" title="{{description}}">
+                <span class="element">{{name}}</span>
+                <span class="element child-indicator hide">
+                    <span class="right-indicator hide"><i class="right"></i></span>
+                    <span class="left-indicator"><i class="down"></i></span>
+        </span>
+        </div>
+            <div class="child"></div>
+        </div>
+    </script>
+    <script src="answer.js"></script>
+</html>
